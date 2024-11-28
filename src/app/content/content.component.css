@@ -1,0 +1,14 @@
+h1{
+    text-align: center;
+    margin: 0;
+    font-size: 2em;
+}
+#title{
+    margin-top: 2%;
+}
+
+#content{
+    display:block;
+    padding-left:20%;
+    padding-right:20%;
+}
