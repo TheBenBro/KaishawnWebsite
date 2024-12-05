@@ -16,6 +16,7 @@ import { HeaderComponent } from './header/header.component';
 import { ContentComponent } from './content/content.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { AboutComponent } from './about/about.component';
+import { FooterComponent } from './footer/footer.component';
 
 const approutes: Routes = [
   {path: "", component: ContentComponent},
@@ -31,6 +32,7 @@ const approutes: Routes = [
     HeaderComponent,
     ProjectsComponent,
     AboutComponent,
+    FooterComponent,
 
   ],
   imports: [
