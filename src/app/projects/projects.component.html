@@ -2,7 +2,7 @@
 
 <div class="content">
   <div>
-    <img src="images/prizefight.png">
+    <img [@openClose]="titleState" src="images/prizefight.png">
   </div>
   <div>
     <p [@openClose]="titleState">{{prizeFightText}}</p>
@@ -19,7 +19,7 @@
     <button mat-button (click)="goToExternalUrl('https://drive.google.com/file/d/1XcTzbLgOrHzkaa2S3-Wd1GIeBVFgUxZi/view?usp=sharing')">Link To Project</button>
   </div>
   <div>
-    <img src="images/Crypt.png" class="image_right">
+    <img [@openClose]="titleState" src="images/Crypt.png" class="image_right">
   </div>
 
 </div>
@@ -28,7 +28,7 @@
 
 <div class="content">
   <div>
-    <img src="images/procedural.png" class="image_left">
+    <img [@openClose]="titleState" src="images/procedural.png" class="image_left">
   </div>
   <div>
     <p [@openClose]="titleState">{{procedural}}</p>

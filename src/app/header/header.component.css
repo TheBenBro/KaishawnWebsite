@@ -38,3 +38,7 @@ div button{
     height:100px;
     width:300px;
 }
+
+div button.MatButton{
+    color:rgb(0, 0, 0);
+}
