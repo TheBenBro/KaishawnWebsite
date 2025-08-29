@@ -2,16 +2,17 @@ import { Component, AfterViewInit } from '@angular/core';
 import { animate, trigger, state, style, transition } from '@angular/animations';
 import { Transform } from 'node:stream';
 @Component({
-  selector: 'app-projects',
-  templateUrl: './projects.component.html',
-  styleUrl: './projects.component.css',
-  animations:[
-    trigger('openClose',[
-      state('closed', style({opacity: "0", transform: 'translateY(20%)'})),
-      state('open', style({opacity: "1", transform: 'translateY(0)'})),
-      transition('closed => open', [animate('1s ease-in')])
-    ])
-  ]
+    selector: 'app-projects',
+    templateUrl: './projects.component.html',
+    styleUrl: './projects.component.css',
+    animations: [
+        trigger('openClose', [
+            state('closed', style({ opacity: "0", transform: 'translateY(20%)' })),
+            state('open', style({ opacity: "1", transform: 'translateY(0)' })),
+            transition('closed => open', [animate('1s ease-in')])
+        ])
+    ],
+    standalone: false
 })
 export class ProjectsComponent {
   titleState: 'open' | 'closed'='closed';
