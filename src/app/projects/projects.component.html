@@ -1,10 +1,11 @@
+<h1 [@openClose]="titleState">Projects</h1>
 
 <div class="content">
   <div>
-    <img src="prizefight.png">
+    <img src="images/prizefight.png">
   </div>
   <div>
-    <p>{{prizeFightText}}</p>
+    <p [@openClose]="titleState">{{prizeFightText}}</p>
     <button mat-button (click)="goToExternalUrl('https://library.humber.ca/collections/repository/content/codename-prizefight')">Link To Project</button>
   </div>
 </div>
@@ -14,11 +15,11 @@
 
 <div class="content">
   <div>
-    <p>{{captisCrystalliText}}</p>
+    <p [@openClose]="titleState">{{captisCrystalliText}}</p>
     <button mat-button (click)="goToExternalUrl('https://drive.google.com/file/d/1XcTzbLgOrHzkaa2S3-Wd1GIeBVFgUxZi/view?usp=sharing')">Link To Project</button>
   </div>
   <div>
-    <img src="Crypt.png" class="image_right">
+    <img src="images/Crypt.png" class="image_right">
   </div>
 
 </div>
@@ -27,14 +28,14 @@
 
 <div class="content">
   <div>
-    <img src="procedural.png" class="image_left">
+    <img src="images/procedural.png" class="image_left">
   </div>
   <div>
-    <p>{{procedural}}</p>
+    <p [@openClose]="titleState">{{procedural}}</p>
     <button mat-button (click)="goToExternalUrl('https://thebenbro.itch.io/procedural-room-generation-tech-demo')">Link To Project</button>
   </div>
 </div>
 
 
-<a href="https://github.com/TheBenBro" target="_blank">My GitHub to other projects</a>
+<p id="github" [@openClose]="titleState"><a href="https://github.com/TheBenBro" target="_blank">GitHub</a></p>
   

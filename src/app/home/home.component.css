@@ -1,0 +1,29 @@
+h1{
+    text-align: center;
+    margin: 0;
+    font-size: 2em;
+}
+#title{
+    margin-top: 2%;
+}
+
+#content{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding-left:20%;
+    padding-right:20%;
+
+}
+
+#link{
+    text-align: center;
+    color: #2fa6ff;
+    
+}
+
+#link button{
+    border-radius: 0px;
+    height:100px;
+    width:300px;
+}

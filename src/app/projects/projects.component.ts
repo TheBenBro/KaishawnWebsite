@@ -1,11 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
+import { animate, trigger, state, style, transition } from '@angular/animations';
+import { Transform } from 'node:stream';
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css',
-
+  animations:[
+    trigger('openClose',[
+      state('closed', style({opacity: "0", transform: 'translateY(20%)'})),
+      state('open', style({opacity: "1", transform: 'translateY(0)'})),
+      transition('closed => open', [animate('1s ease-in')])
+    ])
+  ]
 })
 export class ProjectsComponent {
+  titleState: 'open' | 'closed'='closed';
+
   prizeFightText = 
   `CODENAME PRIZEFIGHT is a fighting game implemented in a custom OpenGL based C++ engine designed specifically to cater to 3D fighting games. 
   It uses morph target animation to achieve a feel inspired by Tekken 3. It hybridizes aspects of 3D and 2D fighters to create a unique and accessible experience.`;
@@ -19,4 +29,10 @@ export class ProjectsComponent {
   goToExternalUrl(a:string) {
     window.open(a, '_blank', 'noopener,noreferrer')
   }
+  ngAfterViewInit(){
+    setTimeout( () => {
+      this.titleState = 'open';
+      }, 100);
+  }
+
 }

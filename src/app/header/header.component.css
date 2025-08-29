@@ -1,10 +1,25 @@
-ul {
-    background-color: #5ED6E6;
-    text-align: center;
-    list-style-type: none;
+div {
+    background-color: #dddddd;
     margin: 0;
     padding-left: 0;
     padding-right: 0;
+    overflow: hidden;
+}
+
+img{
+    width:400px;
+    height: 50%;
+    padding-top: 20px;
+    vertical-align: middle;
+    padding-left:100px
+}
+
+.leftName{
+    overflow: hidden;
+}
+
+.rightName{
+    float: right;
 }
 
 a:link, a:visited{
@@ -14,12 +29,12 @@ a:link, a:visited{
   
 a:hover, a:active{
     text-decoration: none;
-    color: rgb(98, 113, 113);
+    color: #2569FB;
 }
 
-ul button{
+div button{
     border-radius: 0px;
-    color:black;
+    color:rgb(0, 0, 0);
     height:100px;
     width:300px;
 }

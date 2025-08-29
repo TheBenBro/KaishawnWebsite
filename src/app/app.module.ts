@@ -1,8 +1,8 @@
 import { contentChild, NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { BrowserModule, provideClientHydration, DomSanitizer } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {MatIconModule} from '@angular/material/icon';
+import {MatIconModule, MatIconRegistry} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { Routes, RouterModule } from '@angular/router';
@@ -17,10 +17,14 @@ import { ContentComponent } from './content/content.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
+
+import { NgIconsModule } from '@ng-icons/core';
+import { simpleLinkedin, simpleGithub } from '@ng-icons/simple-icons';
 
 const approutes: Routes = [
-  {path: "", component: ContentComponent},
-  {path: "content", component: ContentComponent},
+  {path: "", component: HomeComponent},
+  {path: "home", component: HomeComponent},
   {path: "projects", component: ProjectsComponent},
   {path: "about", component: AboutComponent}
 ]
@@ -33,7 +37,8 @@ const approutes: Routes = [
     ProjectsComponent,
     AboutComponent,
     FooterComponent,
-
+    HomeComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -46,12 +51,20 @@ const approutes: Routes = [
     MatCardModule,
     MatGridListModule,
     BrowserAnimationsModule,
+    NgIconsModule.withIcons({ simpleLinkedin, simpleGithub })
   ],
   providers: [
     provideClientHydration(),
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
   ],
   bootstrap: [AppComponent],
   
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
+    this.matIconRegistry.addSvgIcon(
+      'linkedin',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('linkedin60.svg')
+    );
+  }
+ }
