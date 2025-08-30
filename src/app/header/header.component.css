@@ -35,10 +35,12 @@ a:hover, a:active{
 div button{
     border-radius: 0px;
     color:rgb(0, 0, 0);
+    background-color: #dddddd;
     height:100px;
     width:300px;
+    transition: 0.5s;
 }
 
-div button.MatButton{
-    color:rgb(0, 0, 0);
+.mat-mdc-unelevated-button:hover{
+    background-color: #c2c2c2;
 }

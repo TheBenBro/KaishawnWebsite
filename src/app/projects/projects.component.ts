@@ -5,13 +5,6 @@ import { Transform } from 'node:stream';
     selector: 'app-projects',
     templateUrl: './projects.component.html',
     styleUrl: './projects.component.css',
-    animations: [
-        trigger('openClose', [
-            state('closed', style({ opacity: "0", transform: 'translateY(20%)' })),
-            state('open', style({ opacity: "1", transform: 'translateY(0)' })),
-            transition('closed => open', [animate('1s ease-in')])
-        ])
-    ],
     standalone: false
 })
 export class ProjectsComponent {
@@ -30,10 +23,4 @@ export class ProjectsComponent {
   goToExternalUrl(a:string) {
     window.open(a, '_blank', 'noopener,noreferrer')
   }
-  ngAfterViewInit(){
-    setTimeout( () => {
-      this.titleState = 'open';
-      }, 100);
-  }
-
 }
