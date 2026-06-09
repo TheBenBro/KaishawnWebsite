@@ -1,10 +1,11 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, ChangeDetectionStrategy } from '@angular/core';
 import { animate, trigger, state, style, transition } from '@angular/animations';
 import { Transform } from 'node:stream';
 @Component({
     selector: 'app-projects',
     templateUrl: './projects.component.html',
     styleUrl: './projects.component.css',
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ProjectsComponent {

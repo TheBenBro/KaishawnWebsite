@@ -1,5 +1,5 @@
 import { contentChild, NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration, DomSanitizer } from '@angular/platform-browser';
+import { BrowserModule, provideClientHydration, DomSanitizer, withNoIncrementalHydration } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatIconModule, MatIconRegistry} from '@angular/material/icon';
@@ -54,7 +54,7 @@ const approutes: Routes = [
     NgIconsModule.withIcons({ simpleLinkedin, simpleGithub })
   ],
   providers: [
-    provideClientHydration(),
+    provideClientHydration(withNoIncrementalHydration()),
     provideAnimationsAsync(),
   ],
   bootstrap: [AppComponent],
